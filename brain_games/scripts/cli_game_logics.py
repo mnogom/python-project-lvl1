@@ -60,6 +60,14 @@ def get_game_mechanics(game_type, direct_call):
                                   blue=color_blue,
                                   end=color_end
                                 ))
+    brain_prime_description = ("{blue}=== BRAIN PROGRESSION =={end}\n"
+                               "Answer '{green}yes{end}' if given"
+                               "number is prime."
+                               "Otherwise answer '{green}no{end}'.".format(
+                                  blue=color_blue,
+                                  green=color_green,
+                                  end=color_end
+                                ))
 
     # -- Task generators
     def brain_even_generator():
@@ -115,6 +123,18 @@ def get_game_mechanics(game_type, direct_call):
             "." * len(right_answer))
         return question, right_answer
 
+    def brain_prime_generator():
+        # 'current_number' here is the question
+        current_number = random.randint(0, 100)
+        simple_numbers = [
+            2,  3,  5,  7, 11,
+            13, 17, 19, 23, 29,
+            31, 37, 41, 43, 47,
+            53, 59, 61, 67, 71,
+            73, 79, 83, 89, 97]
+        right_answer = "yes" if current_number in simple_numbers else "no"
+        return current_number, right_answer
+
     # -- Returns
     if game_type == "brain_even":
         return (brain_even_description, brain_even_generator)
@@ -124,6 +144,8 @@ def get_game_mechanics(game_type, direct_call):
         return (brain_gcd_description, brain_gcd_generator)
     elif game_type == "brain_progression":
         return (brain_prog_description, brain_prog_generator)
+    elif game_type == "brain_prime":
+        return (brain_prime_description, brain_prime_generator)
     return None
 
 
