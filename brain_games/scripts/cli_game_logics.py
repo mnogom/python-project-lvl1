@@ -43,15 +43,40 @@ def get_game_mechanics(game_type, direct_call):
                                   blue=color_blue,
                                   green=color_green,
                                   end=color_end)
+    brain_calc_description = ("{blue}=== BRAIN CALC =={end}\n"
+                              "What is the result of the expression?".format(
+                                  blue=color_blue,
+                                  end=color_end
+                                ))
 
     # -- Task generators
     def brain_even_generator():
+        # 'current_number' here is the question
         current_number = random.randint(0, 100)
         right_answer = "no" if current_number % 2 else "yes"
         return current_number, right_answer
+
+    def brain_calc_generator():
+        number_1, number_2 = random.sample(range(101), 2)
+        operation = random.choice(["+", "-", "*"])
+        question = "{n1} {op} {n2}".format(
+            n1=number_1,
+            n2=number_2,
+            op=operation)
+        if operation == "+":
+            right_answer = number_1 + number_2
+        elif operation == "-":
+            right_answer = number_1 - number_2
+        else:
+            right_answer = number_1 * number_2
+        right_answer = str(right_answer)
+        return question, right_answer
+
     # -- Returns
     if game_type == "brain_even":
         return (brain_even_description, brain_even_generator)
+    elif game_type == "brain_calc":
+        return (brain_calc_description, brain_calc_generator)
     return None
 
 
