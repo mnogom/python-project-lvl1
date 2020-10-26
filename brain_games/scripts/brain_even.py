@@ -3,8 +3,7 @@ import brain_games.scripts.cli_game_logics as cli
 
 
 def main():
-    username = cli.welcome_user()
-    cli.start_even_game(username)
+    cli.start_game(game_type="brain_even", direct_call=True)
 
 
 if __name__ == "__main__":
