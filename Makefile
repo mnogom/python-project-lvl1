@@ -9,4 +9,4 @@ build:
 	poetry build
 
 package-install:
-	pip3 install --user --upgrade --no-warn-script-location dist/*.whl
+	pip3 install --user --upgrade dist/*.whl
