@@ -19,6 +19,9 @@ brain-progression:
 brain-prime:
 	poetry run brain-prime
 
+brain-hub:
+	poetry run brain-hub
+
 build:
 	poetry build
 

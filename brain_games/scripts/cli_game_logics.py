@@ -38,8 +38,8 @@ def get_game_mechanics(game_type, direct_call):
     color_end = "\033[0m"
     # -- Game description
     brain_even_description = ("{blue}=== BRAIN EVEN ==={end}\n"
-                              "Answer '{green}yes{end}' if the number is even, "
-                              "otherwise answer '{green}no{end}'.").format(
+                              "Answer '{green}yes{end}' if the number is even,"
+                              " otherwise answer '{green}no{end}'.").format(
                                   blue=color_blue,
                                   green=color_green,
                                   end=color_end)

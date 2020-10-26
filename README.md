@@ -31,3 +31,9 @@
 	[![asciicast](https://asciinema.org/a/5y0rgT0IqRzJtgxgPl5L5QiBD.svg)](https://asciinema.org/a/5y0rgT0IqRzJtgxgPl5L5QiBD)
 	- Wrong answer:
 	[![asciicast](https://asciinema.org/a/dd3lnhop2I172f3z8SAIYRXFB.svg)](https://asciinema.org/a/dd3lnhop2I172f3z8SAIYRXFB)
+
+
+
+### Brain HUB:
+You can also choose the game you want to play:
+[![asciicast](https://asciinema.org/a/37zsW8cUM3IWS5zqQEbmxdD9X.svg)](https://asciinema.org/a/37zsW8cUM3IWS5zqQEbmxdD9X)
