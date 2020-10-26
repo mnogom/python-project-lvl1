@@ -10,3 +10,6 @@ build:
 
 package-install:
 	pip3 install --user --upgrade dist/*.whl
+
+lint:
+	poetry run flake8 brain_games
