@@ -38,7 +38,7 @@ def get_game_mechanics(game_type, direct_call):
     color_end = "\033[0m"
     # -- Game description
     brain_even_description = ("{blue}=== BRAIN EVEN ==={end}\n"
-                              "Answer '{green}yes{end}' if the number is even,"
+                              "Answer '{green}yes{end}' if the number is even, "
                               "otherwise answer '{green}no{end}'.").format(
                                   blue=color_blue,
                                   green=color_green,
@@ -49,20 +49,20 @@ def get_game_mechanics(game_type, direct_call):
                                   end=color_end
                                 ))
     brain_gcd_description = ("{blue}=== BRAIN GCD =={end}\n"
-                             "Find the greatest common divisor"
+                             "Find the greatest common divisor "
                              "of given numbers.".format(
                                   blue=color_blue,
                                   end=color_end
                                 ))
     brain_prog_description = ("{blue}=== BRAIN PROGRESSION =={end}\n"
-                              "What number is missing in the"
+                              "What number is missing in the "
                               "progression?".format(
                                   blue=color_blue,
                                   end=color_end
                                 ))
     brain_prime_description = ("{blue}=== BRAIN PROGRESSION =={end}\n"
-                               "Answer '{green}yes{end}' if given"
-                               "number is prime."
+                               "Answer '{green}yes{end}' if given "
+                               "number is prime. "
                                "Otherwise answer '{green}no{end}'.".format(
                                   blue=color_blue,
                                   green=color_green,
