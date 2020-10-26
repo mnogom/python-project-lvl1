@@ -48,6 +48,12 @@ def get_game_mechanics(game_type, direct_call):
                                   blue=color_blue,
                                   end=color_end
                                 ))
+    brain_gcd_description = ("{blue}=== BRAIN GCD =={end}\n"
+                             "Find the greatest common divisor"
+                             "of given numbers.".format(
+                                  blue=color_blue,
+                                  end=color_end
+                                ))
 
     # -- Task generators
     def brain_even_generator():
@@ -72,11 +78,31 @@ def get_game_mechanics(game_type, direct_call):
         right_answer = str(right_answer)
         return question, right_answer
 
+    def brain_gcd_generator():
+        number_1, number_2 = sorted(
+            random.sample(range(1, 101), 2),
+            reverse=True)
+        question = "{} {}".format(number_1, number_2)
+
+        # more: https://en.wikipedia.org/wiki/Euclidean_algorithm
+        def gcd_Euclidean(number_1, number_2):
+            # q_n1 = number_1 // number_2 -- is not nessesary
+            r_n1 = number_1 % number_2
+            if r_n1 == 0:
+                return number_2
+            return gcd_Euclidean(number_2, r_n1)
+
+        right_answer = gcd_Euclidean(number_1, number_2)
+        right_answer = str(right_answer)
+        return question, right_answer
+
     # -- Returns
     if game_type == "brain_even":
         return (brain_even_description, brain_even_generator)
     elif game_type == "brain_calc":
         return (brain_calc_description, brain_calc_generator)
+    elif game_type == "brain_gcd":
+        return (brain_gcd_description, brain_gcd_generator)
     return None
 
 
