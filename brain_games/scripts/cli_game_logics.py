@@ -54,6 +54,12 @@ def get_game_mechanics(game_type, direct_call):
                                   blue=color_blue,
                                   end=color_end
                                 ))
+    brain_prog_description = ("{blue}=== BRAIN PROGRESSION =={end}\n"
+                              "What number is missing in the"
+                              "progression?".format(
+                                  blue=color_blue,
+                                  end=color_end
+                                ))
 
     # -- Task generators
     def brain_even_generator():
@@ -96,6 +102,19 @@ def get_game_mechanics(game_type, direct_call):
         right_answer = str(right_answer)
         return question, right_answer
 
+    def brain_prog_generator():
+        prog_start = random.randint(0, 100)
+        prog_length = random.randint(5, 10)
+        prog_step = random.randint(1, 100)
+        prog = [prog_start + i * prog_step for i in range(prog_length)]
+        right_answer = random.choice(prog)
+        right_answer = str(right_answer)
+        question = " ".join([str(el) for el in prog])
+        question = question.replace(
+            right_answer,
+            "." * len(right_answer))
+        return question, right_answer
+
     # -- Returns
     if game_type == "brain_even":
         return (brain_even_description, brain_even_generator)
@@ -103,6 +122,8 @@ def get_game_mechanics(game_type, direct_call):
         return (brain_calc_description, brain_calc_generator)
     elif game_type == "brain_gcd":
         return (brain_gcd_description, brain_gcd_generator)
+    elif game_type == "brain_progression":
+        return (brain_prog_description, brain_prog_generator)
     return None
 
 
