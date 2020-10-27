@@ -6,7 +6,16 @@ import brain_games.scripts.help_functions as hf
 def get_user_answer():
     INPUT_SYMBOL = "{green}>>{end} "
     INPUT_SYMBOL = hf.colorize_string(INPUT_SYMBOL)
-    answer = prompt.string(INPUT_SYMBOL)
+
+    try:
+        answer = prompt.string(INPUT_SYMBOL)
+
+    except KeyboardInterrupt:
+        goodbye_user()
+
+    if answer == "exit":
+        goodbye_user()
+
     return answer
 
 
@@ -21,28 +30,41 @@ def welcome_user():
             "  - Welcome to the Brain Games!\n  - What's your name?\n")
     HEAD = hf.colorize_string(HEAD)
     print(HEAD)
+
     username = get_user_answer()
     print("  - Hello, {}\n".format(username))
+
     return username
+
+
+def goodbye_user():
+    print("  - Gg! See you next time")
+    exit()
 
 
 def start(game_type, username=None, direct_call=True):
     # -- Check if game started directly (True) or from HUB (False)
     if direct_call:
         username = welcome_user()
+
     if username is None:
         # Need to check this
         raise NameError("Username is None. Try to check 'direct_call' value")
+
     # -- Init game: Description, Task Generator, Game status
     game_description, game_generator = get_game(game_type)
     correct_answers = 0
+
     # -- Show to user Descriprtion
     print(game_description)
+
     # -- Main game mechanic
     while correct_answers < 3:
+
         game_task, game_answer = game_generator()
         print("  - Question: {}".format(game_task))
         user_answer = get_user_answer()
+
         if user_answer == game_answer:
             correct_answers += 1
             print("  - Correct!\n")
@@ -58,5 +80,6 @@ def start(game_type, username=None, direct_call=True):
             message = hf.colorize_string(message)
             print(message)
             return False
+
     print("Congratulations, {}!".format(username))
     return True

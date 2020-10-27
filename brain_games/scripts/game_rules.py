@@ -14,6 +14,7 @@ def generator_brain_even():
         # 'current_number' here is the question
         current_number = random.randint(0, 100)
         right_answer = "no" if current_number % 2 else "yes"
+
         return current_number, right_answer
 
     return DESCRIPTION, task_generator
@@ -40,6 +41,7 @@ def generator_brain_calc():
         else:
             right_answer = number_1 * number_2
         right_answer = str(right_answer)
+
         return question, right_answer
 
     return DESCRIPTION, task_generator
@@ -69,6 +71,7 @@ def generator_brain_gcd():
 
         right_answer = gcd_Euclidean(number_1, number_2)
         right_answer = str(right_answer)
+
         return question, right_answer
 
     return DESCRIPTION, task_generator
@@ -93,6 +96,7 @@ def generator_brain_progression():
         question = question.replace(
             right_answer,
             "." * len(right_answer))
+
         return question, right_answer
 
     return DESCRIPTION, task_generator
@@ -117,21 +121,28 @@ def generator_brain_prime():
             53, 59, 61, 67, 71,
             73, 79, 83, 89, 97]
         right_answer = "yes" if current_number in simple_numbers else "no"
+
         return current_number, right_answer
 
     return DESCRIPTION, task_generator
 
 
 def get_game(game):
+
     if game == "brain_even":
         return generator_brain_even()
+
     elif game == "brain_calc":
         return generator_brain_calc()
+
     elif game == "brain_gcd":
         return generator_brain_gcd()
+
     elif game == "brain_progression":
         return generator_brain_progression()
+
     elif game == "brain_prime":
         return generator_brain_prime()
+
     else:
         return None, None
