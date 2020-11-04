@@ -85,7 +85,7 @@ testing = ["pytest (>=3.5,<3.7.3 || >3.7.3)", "pytest-checkdocs (>=1.2.3)", "pyt
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.7"
-content-hash = "ef4a2c2dd07bc88d2108f4fb1080460e85124661c76c51167a1abaa2ee07fb64"
+content-hash = "4a33593b9b6d25d96d01119d5db616872b4beeeb26ae44047d4ad4f1c694bbf5"
 
 [metadata.files]
 flake8 = [
