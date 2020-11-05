@@ -1,7 +1,7 @@
 # Brain Games [Hexlet project]
 ![Actions Status](/workflows/hexlet-check/badge.svg)
 [![Maintainability](https://api.codeclimate.com/v1/badges/d12ce7f3ddc4afb5be10/maintainability)](https://codeclimate.com/github/mnogom/python-project-lvl1/maintainability)
-![Python package](https:/s/github.com/mnogom/python-project-lvl1/workflows/Python%20package/badge.svg?branch=main)
+![Python package](https://github.com/mnogom/python-project-lvl1/workflows/Python%20package/badge.svg?branch=main)
 
 ## Games inside
 - Brain even
