@@ -22,6 +22,7 @@
 ```bash
 $ pip3 install -i https://test.pypi.org/simple/ konstantin-hexlet-code
 ```
+_To upgrade use --upgrade tag in the end of command_
 
 
 

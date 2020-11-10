@@ -35,7 +35,7 @@ package-local-install:
 
 
 package-repo-install:
-	pip install -i https://test.pypi.org/simple/ konstantin-hexlet-code
+	pip install -i https://test.pypi.org/simple/ konstantin-hexlet-code --upgrade
 
 
 upload-to-testpypi:
