@@ -1,6 +1,8 @@
 from brain_games import help_functions
-from brain_games.scripts import cli
+from brain_games import cli
 
+
+COUNT_OF_ANSWERS_TO_WIN = 3
 
 def start(game_description, game_generator, username=None, direct_call=True):
     # -- Check if game started directly (True) or from HUB (False)
@@ -14,11 +16,11 @@ def start(game_description, game_generator, username=None, direct_call=True):
     # -- Init game: Description, Task Generator, Game status
     correct_answers = 0
 
-    # -- Show to user Descriprtion
+    # -- Show to user Description
     print(game_description)
 
     # -- Main game mechanic
-    while correct_answers < 3:
+    while correct_answers < COUNT_OF_ANSWERS_TO_WIN:
 
         game_task, game_answer = game_generator()
         print("  - Question: {}".format(game_task))
