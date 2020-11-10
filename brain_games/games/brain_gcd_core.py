@@ -9,6 +9,9 @@ DESCRIPTION = ("{blue}═══ BRAIN GCD ═══{end}\n\n"
                "of given numbers.")
 DESCRIPTION = help_functions.colorize_string(DESCRIPTION)
 
+# -- Parameters
+MIN = 1
+MAX = 100
 
 # more: https://en.wikipedia.org/wiki/Euclidean_algorithm
 def _gcd_euclidean(number_1, number_2):
@@ -22,7 +25,7 @@ def _gcd_euclidean(number_1, number_2):
 # -- Task generator
 def task_generator():
     number_1, number_2 = sorted(
-        random.sample(range(1, 101), 2),
+        random.sample(range(MIN, MAX + 1), 2),
         reverse=True)
     question = "{} {}".format(number_1, number_2)
 

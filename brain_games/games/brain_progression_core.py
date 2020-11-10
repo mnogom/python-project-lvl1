@@ -9,12 +9,20 @@ DESCRIPTION = ("{blue}═══ BRAIN PROGRESSION ═══{end}\n\n"
                "progression?")
 DESCRIPTION = help_functions.colorize_string(DESCRIPTION)
 
+# -- Parameters
+FIRST_MIN = 0
+FIRST_MAX = 100
+LENGTH_MIN = 5
+LENGTH_MAX = 10
+STEP_MIN = 1
+STEP_MAX = 100
+
 
 # -- Task generator
 def task_generator():
-    prog_start = random.randint(0, 100)
-    prog_length = random.randint(5, 10)
-    prog_step = random.randint(1, 100)
+    prog_start = random.randint(FIRST_MIN, FIRST_MAX)
+    prog_length = random.randint(LENGTH_MIN, LENGTH_MAX)
+    prog_step = random.randint(STEP_MIN, STEP_MAX)
     prog = [prog_start + i * prog_step for i in range(prog_length)]
 
     right_answer = random.choice(prog)
