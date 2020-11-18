@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "Konstantin_hexlet_code"
-version = "0.1.4"
+version = "0.1.5"
 description = "First project on hexlet"
 authors = ["Konstantin <freidlinks@ya.ru>"]
 packages = [
@@ -33,7 +33,6 @@ brain-calc = "brain_games.scripts.brain_calc:main"
 brain-gcd = "brain_games.scripts.brain_gcd:main"
 brain-progression = "brain_games.scripts.brain_progression:main"
 brain-prime = "brain_games.scripts.brain_prime:main"
-brain-hub = "brain_games.scripts.brain_hub:main"
 
 # Add test repository source
 [[tool.poetry.source]]
