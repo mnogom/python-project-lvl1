@@ -16,7 +16,7 @@ MAX = 100
 # -- Task generator
 def task_generator():
     # 'current_number' here is the question
-    current_number = random.randint(MIN, MAX + 1)
-    right_answer = "no" if current_number % 2 else "yes"
+    question = random.randint(MIN, MAX + 1)
+    right_answer = "no" if question % 2 else "yes"
 
-    return current_number, right_answer
+    return question, right_answer
