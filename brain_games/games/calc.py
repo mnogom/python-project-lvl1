@@ -1,13 +1,10 @@
 import random
 import operator
 
-from brain_games import help_functions
-
 
 # -- Description
 DESCRIPTION = ("{blue}═══ BRAIN CALC ═══{end}\n\n"
-               "  - What is the result of the expression?")
-DESCRIPTION = help_functions.colorize_string(DESCRIPTION)
+               "  - What is the result of the expression?\n")
 
 # -- Parameters
 MIN = 0
@@ -18,8 +15,9 @@ OPERATIONS = {
     "*": operator.mul
 }
 
+
 # -- Task generator
-def task_generator():
+def generate_task():
     number_1, number_2 = random.sample(range(MIN, MAX + 1), 2)
     operation = random.choice(list(OPERATIONS.keys()))
     question = "{n1} {op} {n2}".format(
@@ -28,6 +26,5 @@ def task_generator():
         op=operation)
 
     right_answer = OPERATIONS[operation](number_1, number_2)
-    right_answer = str(right_answer)
 
-    return question, right_answer
+    return question, str(right_answer)
