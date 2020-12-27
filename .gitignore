@@ -4,3 +4,5 @@ dist/
 delme.py
 .vscode
 .idea
+.DS_Store
+.github/.DS_Store
