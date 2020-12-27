@@ -1,13 +1,10 @@
 #!/usr/bin/env python3
-from brain_games import game_mechanic
-from brain_games.games import brain_gcd_core
+from brain_games import engine
+from brain_games.games import gcd
 
 
 def main():
-    game_mechanic.start(
-        game_description=brain_gcd_core.DESCRIPTION,
-        game_generator=brain_gcd_core.task_generator
-    )
+    engine.play(game=gcd)
 
 
 if __name__ == "__main__":
