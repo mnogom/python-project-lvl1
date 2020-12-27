@@ -39,7 +39,7 @@ package-repo-install:
 
 
 upload-to-testpypi:
-	poetry publish -r testPyPi --build
+	poetry publish -r testPyPi --build --dry-run
 
 
 lint:
