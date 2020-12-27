@@ -1,42 +1,88 @@
+from typing import Optional
 import prompt
 
-from brain_games import help_functions
+
+HEAD = ("{red}"
+        "╔═══════════════════════════════════╗\n"
+        "║   ╷                               ║\n"
+        "║   ├─┐┌─┌─┐╷┌─┐  ┌─┐┌─┐┌┬┐┌─┐╶─╴   ║\n"
+        "║   └─┘╵ └─┴╵╵ ╵  └─┤└─┴╵ ╵└─╴╶─╴   ║\n"
+        "║                 ╶─┘               ║\n"
+        "╚═══════════════════════════════════╝{end}\n")
+INPUT_SYMBOL = "{green}>>{end} "
 
 
-def welcome_user():
-    HEAD = ("{red}"
-            "╔═══════════════════════════════════╗\n"
-            "║   ╷                               ║\n"
-            "║   ├─┐┌─┌─┐╷┌─┐  ┌─┐┌─┐┌┬┐┌─┐╶─╴   ║\n"
-            "║   └─┘╵ └─┴╵╵ ╵  └─┤└─┴╵ ╵└─╴╶─╴   ║\n"
-            "║                 ╶─┘               ║\n"
-            "╚═══════════════════════════════════╝{end}\n\n"
-            "  - Welcome to the Brain Games!\n  - What's your name?\n")
-    HEAD = help_functions.colorize_string(HEAD)
-    print(HEAD)
+def _format(text: str, **kwargs) -> str:
+    """
+    Function returns formatted text with bash colors codes.
+    Use {red}, {green} or {blue}. End of color string - {end}
 
-    username = get_user_answer()
-    print("  - Hello, {}\n".format(username))
+    :param text: text to color
+    :return: colorized string
+    """
+    return text.format(
+        red="\033[31m",
+        green="\033[32m",
+        blue="\033[94m",
+        end="\033[0m",
+        **kwargs
+    )
 
-    return username
+
+def render_text(text: str, **kwargs) -> None:
+    """
+    Function to print string for user
+
+    :param text: text to print
+    """
+    print(_format(text, **kwargs))
 
 
-def get_user_answer():
-    INPUT_SYMBOL = "{green}>>{end} "
-    INPUT_SYMBOL = help_functions.colorize_string(INPUT_SYMBOL)
+def get_user_answer(question=None, **kwargs) -> Optional[str]:
+    """
+    Function to get user answer. If user print "exit" or use
+    "Keyboard interrupt" function returns None. Also you can
+    send question that will print before row with input
+
+    :param question: render "question" before input
+    :return: username or None
+    """
+    if question is not None:
+        render_text(question, **kwargs)
 
     try:
-        answer = prompt.string(INPUT_SYMBOL)
+        answer = prompt.string(_format(INPUT_SYMBOL))
 
     except KeyboardInterrupt:
-        goodbye_user()
+        return None
 
     if answer == "exit":
-        goodbye_user()
+        return None
 
     return answer
 
 
-def goodbye_user():
-    print("  - Gg! See you next time")
+def welcome_user() -> str:
+    """
+    Greeting function
+
+    :return: username
+    """
+    render_text(HEAD)
+    render_text("  - Welcome to the Brain Games!")
+    username = get_user_answer("  - What's your name?")
+
+    if username is not None:
+        render_text("  - Hello, {username}\n", username=username)
+
+    return username
+
+
+def goodbye_user() -> None:
+    """
+    Function for exit
+
+    :return: None
+    """
+    render_text("  - See you next time")
     exit()
