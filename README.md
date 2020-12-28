@@ -1,6 +1,5 @@
 # Brain Games [Hexlet project]
-![linter-check](https://github.com/mnogom/python-project-lvl1/workflows/linter-check/badge.svg)
-![hexlet-check](https://github.com/mnogom/python-project-lvl1/workflows/hexlet-check/badge.svg)
+![hexlet-ci](https://github.com/mnogom/python-project-lvl1/workflows/hexlet-ci/badge.svg?branch=main)
 [![Maintainability](https://api.codeclimate.com/v1/badges/d12ce7f3ddc4afb5be10/maintainability)](https://codeclimate.com/github/mnogom/python-project-lvl1/maintainability)
 
 ## Games inside
