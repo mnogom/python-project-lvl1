@@ -11,10 +11,10 @@
 
 ## Demos
 ##### Wrong answer
-[![asciicast](https://asciinema.org/a/368321.svg)](https://asciinema.org/a/368321)
+[![asciicast](https://asciinema.org/a/381521.svg)](https://asciinema.org/a/381521)
 
 ##### Right answers
-[![asciicast](https://asciinema.org/a/368323.svg)](https://asciinema.org/a/368323)
+[![asciicast](https://asciinema.org/a/381524.svg)](https://asciinema.org/a/381524)
 
 ## Instalation
 [![asciicast](https://asciinema.org/a/K64o88jsEzoo45eLJiesZQSA7.svg)](https://asciinema.org/a/K64o88jsEzoo45eLJiesZQSA7)
