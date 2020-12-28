@@ -3,8 +3,7 @@ import operator
 
 
 # -- Description
-DESCRIPTION = ("{blue}═══ BRAIN CALC ═══{end}\n\n"
-               "  - What is the result of the expression?\n")
+DESCRIPTION = "What is the result of the expression?"
 
 # -- Parameters
 MIN = 0

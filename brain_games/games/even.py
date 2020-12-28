@@ -2,9 +2,7 @@ import random
 
 
 # -- Description
-DESCRIPTION = ("{blue}═══ BRAIN EVEN ═══{end}\n\n"
-               "  - Answer {green}yes{end} if the number is even,"
-               " otherwise answer {green}no{end}.\n")
+DESCRIPTION = 'Answer "yes" if the number is even, otherwise answer "no".'
 
 # -- Parameters
 MIN = 0

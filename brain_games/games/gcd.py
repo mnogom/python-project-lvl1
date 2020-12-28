@@ -2,9 +2,7 @@ import random
 
 
 # -- Description
-DESCRIPTION = ("{blue}═══ BRAIN GCD ═══{end}\n\n"
-               "  - Find the greatest common divisor "
-               "of given numbers.\n")
+DESCRIPTION = "Find the greatest common divisor of given numbers."
 
 # -- Parameters
 MIN = 1

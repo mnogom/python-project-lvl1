@@ -2,10 +2,7 @@ import random
 
 
 # -- Description
-DESCRIPTION = ("{blue}═══ BRAIN PROGRESSION ═══{end}\n\n"
-               "  - Answer {green}yes{end} if given "
-               "number is prime. "
-               "Otherwise answer {green}no{end}.\n")
+DESCRIPTION = 'Answer "yes" if given number is prime. Otherwise answer "no".'
 
 # -- Parameters
 MIN = 2

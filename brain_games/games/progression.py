@@ -2,9 +2,7 @@ import random
 
 
 # -- Description
-DESCRIPTION = ("{blue}═══ BRAIN PROGRESSION ═══{end}\n\n"
-               "  - What number is missing in the "
-               "progression?\n")
+DESCRIPTION = "What number is missing in the progression?"
 
 # -- Parameters
 FIRST_MIN = 0
@@ -26,7 +24,7 @@ def generate_task():
     right_answer_index = progression.index(right_answer)
     right_answer = str(right_answer)
 
-    progression[right_answer_index] = "." * len(right_answer)
+    progression[right_answer_index] = ".."
     question = " ".join([str(el) for el in progression if el])
 
     return question, right_answer
