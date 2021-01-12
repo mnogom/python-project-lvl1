@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "hexlet_code"
-version = "0.1.6"
+version = "0.1.7"
 description = "First project on hexlet"
 authors = ["Konstantin <freidlinks@ya.ru>"]
 packages = [
@@ -19,7 +19,6 @@ prompt = "^0.4.1"
 
 [tool.poetry.dev-dependencies]
 flake8 = "^3.8.4"
-rope = "^0.18.0"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

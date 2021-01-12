@@ -1,3 +1,8 @@
+"""
+Module create templates for game status and describe engine
+of any game
+"""
+
 import prompt
 
 from brain_games import cli
@@ -12,7 +17,18 @@ TEMPLATE_ON_WRONG_ANSWER = ("'{user_answer}' is wrong answer ;(. "
 TEMPLATE_ON_WIN = "Congratulations, {username}!"
 
 
-def play(game):
+def play(game) -> None:
+    """
+    Main function to start the game.
+    At the start game welcomes User and ask his name.
+    Then engine shows to him description of current game and first question.
+    For win User must give right answers for 3 questions.
+    If any answer is wrong - User lost.
+
+    :param game: module with game rules. Module must contain DESCRIPTION and
+    function generate_task (that must return the question and the right answer)
+    """
+
     username = cli.welcome_user()
 
     # -- Init game: counter of correct answers
