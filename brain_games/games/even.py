@@ -22,8 +22,8 @@ def _is_even(number: int) -> bool:
 
 
 # -- Task generator
-def generate_question() -> (str, str):
-    """Generate question and right answer. Uses constants: MIN, MAX
+def generate_round() -> (str, str):
+    """Generate question and right answer.
 
     :return: question and answer
     """

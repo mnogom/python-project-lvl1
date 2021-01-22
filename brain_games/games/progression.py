@@ -16,7 +16,7 @@ STEP_MAX = 100
 
 
 def _generate_progression(start: int, step: int, length: int) -> list:
-    """Function returns an arithmetic progression
+    """Returns an arithmetic progression.
 
     :param start: first number of progression
     :param step: step of progression
@@ -28,9 +28,8 @@ def _generate_progression(start: int, step: int, length: int) -> list:
 
 
 # -- Task generator
-def generate_question() -> (str, str):
-    """Generate question and right answer. Uses constants: FIRST_MIN,
-    FIRST_MAX, LENGTH_MIN, LENGTH_MAX, STEP_MIN, STEP_MAX
+def generate_round() -> (str, str):
+    """Generate question and right answer.
 
     :return: question and answer
     """

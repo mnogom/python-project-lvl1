@@ -19,6 +19,7 @@ TEMPLATE_GET_ANSWER = "Your answer: "
 
 def play(game) -> None:
     """Main function to start the game.
+
     At the start game welcomes User and ask his name.
     Then engine shows to him description of current game and first question.
     For win User must give right answers for 3 questions.
@@ -38,7 +39,7 @@ def play(game) -> None:
     # -- Main game mechanic
     for _ in range(COUNT_OF_ROUNDS_TO_WIN):
 
-        game_question, right_answer = game.generate_question()
+        game_question, right_answer = game.generate_round()
         print(TEMPLATE_QUESTION.format(task=game_question))
         user_answer = prompt.string(TEMPLATE_GET_ANSWER)
 

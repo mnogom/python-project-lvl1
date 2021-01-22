@@ -8,11 +8,11 @@ DESCRIPTION = "What is the result of the expression?"
 # -- Constants
 MIN = 0
 MAX = 100
-OPERATIONS = ("+", "-", "*")
+OPERATIONS = "+-*"
 
 
 def _calculate_result(number_1: int, number_2: int, operation: str) -> int:
-    """Returns result of calculation a mathematical expression
+    """Returns result of calculation a mathematical expression.
 
     :param number_1: number #1
     :param number_2: number #2
@@ -32,8 +32,8 @@ def _calculate_result(number_1: int, number_2: int, operation: str) -> int:
 
 
 # -- Task generator
-def generate_question() -> (str, str):
-    """Generate question and right answer. Uses constants: MIN, MAX, OPERATIONS
+def generate_round() -> (str, str):
+    """Generate question and right answer.
 
     :return: question and answer
     """

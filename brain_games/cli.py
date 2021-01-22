@@ -4,7 +4,7 @@ import prompt
 
 
 def welcome_user() -> str:
-    """Function welcome User and ask him for the name
+    """Welcome User and ask him for the name.
 
     :return: User name
     """

@@ -12,7 +12,8 @@ MAX = 100
 
 
 def _is_prime(number: int) -> bool:
-    """Function check if number is prime.
+    """Check if number is prime.
+
     It uses Sieve of Eratosthenes conception.
     More: https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
 
@@ -36,8 +37,8 @@ def _is_prime(number: int) -> bool:
 
 
 # -- Task generator
-def generate_question() -> (str, str):
-    """Generate question and right answer. Uses constants: MIN, MAX
+def generate_round() -> (str, str):
+    """Generate question and right answer.
 
     :return: question and answer
     """

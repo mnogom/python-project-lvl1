@@ -12,7 +12,8 @@ MAX = 100
 
 
 def _get_gcd(number_1: int, number_2: int) -> int:
-    """Function return greatest common divisor of two numbers.
+    """Return greatest common divisor of two numbers.
+
     It uses Euclidean algorithm.
     More: https://en.wikipedia.org/wiki/Euclidean_algorithm
 
@@ -28,8 +29,8 @@ def _get_gcd(number_1: int, number_2: int) -> int:
 
 
 # -- Task generator
-def generate_question() -> (str, str):
-    """Generate question and right answer. Uses constants: MIN, MAX
+def generate_round() -> (str, str):
+    """Generate question and right answer.
 
     :return: question and answer
     """
