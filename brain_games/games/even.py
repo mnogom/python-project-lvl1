@@ -1,6 +1,4 @@
-"""
-Description of the rules for game 'brain-even'
-"""
+"""Description of the rules for game 'brain-even'."""
 
 import random
 
@@ -13,27 +11,25 @@ MIN = 0
 MAX = 100
 
 
-def _is_even(number: int) -> str:
-    """
-    Check if number is even. Returns 'yes' if even, 'no' if not
+def _is_even(number: int) -> bool:
+    """Check if number is even.
 
     :param number: number to check
-    :return: 'yes'/'no'
+    :return: True/False
     """
 
-    return "no" if number % 2 else "yes"
+    return False if number % 2 else True
 
 
 # -- Task generator
-def generate_task() -> (str, str):
-    """
-    Generate question and right answer. Uses constants: MIN, MAX
+def generate_question() -> (str, str):
+    """Generate question and right answer. Uses constants: MIN, MAX
 
     :return: question and answer
     """
 
-    number = random.randint(MIN, MAX + 1)
+    number = random.randint(MIN, MAX)
     question = str(number)
-    right_answer = _is_even(number)
+    right_answer = "yes" if _is_even(number) else "no"
 
     return question, right_answer

@@ -1,6 +1,4 @@
-"""
-Description of the rules for game 'brain-progression'
-"""
+"""Description of the rules for game 'brain-progression'."""
 
 import random
 
@@ -18,8 +16,7 @@ STEP_MAX = 100
 
 
 def _generate_progression(start: int, step: int, length: int) -> list:
-    """
-    Function returns an arithmetic progression
+    """Function returns an arithmetic progression
 
     :param start: first number of progression
     :param step: step of progression
@@ -31,9 +28,8 @@ def _generate_progression(start: int, step: int, length: int) -> list:
 
 
 # -- Task generator
-def generate_task() -> (str, str):
-    """
-    Generate question and right answer. Uses constants: FIRST_MIN,
+def generate_question() -> (str, str):
+    """Generate question and right answer. Uses constants: FIRST_MIN,
     FIRST_MAX, LENGTH_MIN, LENGTH_MAX, STEP_MIN, STEP_MAX
 
     :return: question and answer
@@ -49,6 +45,6 @@ def generate_task() -> (str, str):
     right_answer_index = progression.index(right_answer)
 
     progression[right_answer_index] = ".."
-    question = " ".join([str(el) for el in progression if el])
+    question = " ".join([str(el) for el in progression])
 
     return question, str(right_answer)

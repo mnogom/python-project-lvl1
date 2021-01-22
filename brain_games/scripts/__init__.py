@@ -1,3 +1,1 @@
-"""
-Package to load games
-"""
+"""Package to load games."""

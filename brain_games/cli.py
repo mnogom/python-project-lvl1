@@ -1,13 +1,11 @@
-"""
-Module implements comand line interface
-"""
+"""Module implements command line interface."""
 
 import prompt
 
 
 def welcome_user() -> str:
-    """
-    Function welcome User and ask him for the name
+    """Function welcome User and ask him for the name
+
     :return: User name
     """
 

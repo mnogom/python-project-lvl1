@@ -1,7 +1,6 @@
-"""
-This package use structure:
+"""This package use structure:
     1. 'scripts' - the package to call games
-    2. 'games' - the bundle of modules. It contains rules
+    2. 'games' - the package that contains rules
        of games (description, parameters and task generator)
     3. 'cli' - the module that creates command line interface
     4. 'engine' - the module that create basic mechanics of games.

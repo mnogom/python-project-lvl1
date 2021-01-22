@@ -1,7 +1,5 @@
 #!/usr/bin/env python3
-"""
-Start the game 'brain gcd'
-"""
+"""Start the game 'brain gcd'."""
 
 from brain_games import engine
 from brain_games.games import gcd

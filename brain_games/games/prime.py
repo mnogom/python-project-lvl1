@@ -1,6 +1,4 @@
-"""
-Description of the rules for game 'brain-prime'
-"""
+"""Description of the rules for game 'brain-prime'."""
 
 import random
 
@@ -9,20 +7,21 @@ import random
 DESCRIPTION = 'Answer "yes" if given number is prime. Otherwise answer "no".'
 
 # -- Constants
-MIN = 2
+MIN = 0
 MAX = 100
 
 
-def _is_prime(number: int) -> str:
-    """
-    Function check if number is prime.
+def _is_prime(number: int) -> bool:
+    """Function check if number is prime.
     It uses Sieve of Eratosthenes conception.
     More: https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
-    Returns 'yes' if even, 'no' if not
 
     :param number: number to check
-    :return: 'yes'/'no'
+    :return: True/False
     """
+
+    if number == 0 or number == 1:
+        return False
 
     all_numbers = list(range(2, number + 1))
 
@@ -31,21 +30,20 @@ def _is_prime(number: int) -> str:
         all_numbers = [el for el in all_numbers if el % simple_number != 0]
 
         if number not in all_numbers:
-            return "no"
+            return False
 
-    return "yes"
+    return True
 
 
 # -- Task generator
-def generate_task() -> (str, str):
-    """
-    Generate question and right answer. Uses constants: MIN, MAX
+def generate_question() -> (str, str):
+    """Generate question and right answer. Uses constants: MIN, MAX
 
     :return: question and answer
     """
 
-    # here 'the number' is 'the question'
-    number = random.randint(MIN, MAX + 1)
-    right_answer = _is_prime(number)
+    number = random.randint(MIN, MAX)
+    question = str(number)
+    right_answer = "yes" if _is_prime(number) else "no"
 
-    return str(number), right_answer
+    return question, right_answer

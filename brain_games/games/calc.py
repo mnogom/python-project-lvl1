@@ -1,10 +1,6 @@
-"""
-Description of the rules for game 'brain-calc'
-"""
+"""Description of the rules for game 'brain-calc'."""
 
 import random
-import operator
-
 
 # -- Description
 DESCRIPTION = "What is the result of the expression?"
@@ -12,16 +8,11 @@ DESCRIPTION = "What is the result of the expression?"
 # -- Constants
 MIN = 0
 MAX = 100
-OPERATIONS = {
-    "+": operator.add,
-    "-": operator.sub,
-    "*": operator.mul
-}
+OPERATIONS = ("+", "-", "*")
 
 
 def _calculate_result(number_1: int, number_2: int, operation: str) -> int:
-    """
-    Returns result of calculation a mathematical expression
+    """Returns result of calculation a mathematical expression
 
     :param number_1: number #1
     :param number_2: number #2
@@ -29,19 +20,27 @@ def _calculate_result(number_1: int, number_2: int, operation: str) -> int:
     :return: result of expression
     """
 
-    return OPERATIONS[operation](number_1, number_2)
+    if operation == "+":
+        return number_1 + number_2
+    if operation == "-":
+        return number_1 - number_2
+    if operation == "*":
+        return number_1 * number_2
+
+    raise ValueError("Action on '{operation}' is not defined. ".format(
+        operation=operation))
 
 
 # -- Task generator
-def generate_task() -> (str, str):
-    """
-    Generate question and right answer. Uses constants: MIN, MAX, OPERATIONS
+def generate_question() -> (str, str):
+    """Generate question and right answer. Uses constants: MIN, MAX, OPERATIONS
 
     :return: question and answer
     """
 
-    number_1, number_2 = random.sample(range(MIN, MAX + 1), 2)
-    operation = random.choice(list(OPERATIONS.keys()))
+    number_1 = random.randint(MIN, MAX)
+    number_2 = random.randint(MIN, MAX)
+    operation = random.choice(OPERATIONS)
 
     question = "{n1} {op} {n2}".format(
         n1=number_1,

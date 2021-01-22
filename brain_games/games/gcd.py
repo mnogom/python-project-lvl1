@@ -1,6 +1,4 @@
-"""
-Description of the rules for game 'brain-gcd'
-"""
+"""Description of the rules for game 'brain-gcd'."""
 
 import random
 
@@ -14,8 +12,7 @@ MAX = 100
 
 
 def _get_gcd(number_1: int, number_2: int) -> int:
-    """
-    Function return greatest common divisor of two numbers.
+    """Function return greatest common divisor of two numbers.
     It uses Euclidean algorithm.
     More: https://en.wikipedia.org/wiki/Euclidean_algorithm
 
@@ -24,22 +21,21 @@ def _get_gcd(number_1: int, number_2: int) -> int:
     :return: greatest common divisor
     """
 
-    reminder = number_1 % number_2
-    if reminder == 0:
+    remainder = number_1 % number_2
+    if remainder == 0:
         return number_2
-    return _get_gcd(number_2, reminder)
+    return _get_gcd(number_2, remainder)
 
 
 # -- Task generator
-def generate_task() -> (str, str):
-    """
-    Generate question and right answer. Uses constants: MIN, MAX
+def generate_question() -> (str, str):
+    """Generate question and right answer. Uses constants: MIN, MAX
 
     :return: question and answer
     """
 
-    number_1 = random.randint(MIN, MAX + 1)
-    number_2 = random.randint(MIN, MAX + 1)
+    number_1 = random.randint(MIN, MAX)
+    number_2 = random.randint(MIN, MAX)
     question = "{} {}".format(number_1, number_2)
 
     right_answer = _get_gcd(number_1, number_2)
