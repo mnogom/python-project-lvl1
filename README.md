@@ -38,8 +38,13 @@ Small bundle of 5 games with simple mechanic. To win you need to give 3 right an
 
 ## Installation
 [![asciicast](https://asciinema.org/a/K64o88jsEzoo45eLJiesZQSA7.svg)](https://asciinema.org/a/K64o88jsEzoo45eLJiesZQSA7)
+> Deprecated
+> ```bash
+> $ pip3 install -i https://test.pypi.org/simple/konstantin-hexlet-code
+> ```
+
 ```bash
-$ pip3 install -i https://test.pypi.org/simple/konstantin-hexlet-code
+pip3 install --upgrade git+https://github.com/mnogom/python-project-lvl2.git
 ```
 _To upgrade use --upgrade tag in the end of command_
 
